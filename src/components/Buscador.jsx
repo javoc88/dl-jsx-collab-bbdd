@@ -1,6 +1,6 @@
 const Buscador = ({ onChange, search }) => {
     return (
-        <form className="d-flex" role="search">
+        <form className="d-flex" role="search" data-bs-theme="dark">
             <input
             className="form-control my-3"
             type="search"

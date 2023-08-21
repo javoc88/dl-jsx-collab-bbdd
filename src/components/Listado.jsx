@@ -2,7 +2,7 @@ import Table from "react-bootstrap/Table";
 
 const Listado = ({ collabs }) => {
   return (
-    <Table responsive striped bordered hover>
+    <Table responsive striped bordered hover variant="dark">
       <thead>
         <tr>
           <th>Nombre</th>

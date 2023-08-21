@@ -49,7 +49,7 @@ const Formulario = ({ onSubmit, setAlert }) => {
 
     return (
         <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3" controlId="formBasicEmail" data-bs-theme="dark">
                 <Form.Control 
                     className="my-3"
                     type="text" 
