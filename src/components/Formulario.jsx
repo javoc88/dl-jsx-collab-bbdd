@@ -2,10 +2,10 @@ import Button from "react-bootstrap/Button"
 import Form from "react-bootstrap/Form"
 import { useState } from "react"
 
-const Formulario = ({ setAlert }) => {
+const Formulario = ({ onSubmit, setAlert }) => {
     const [colaborador, setColaborador] = useState({
         nombre: "",
-        email:"",
+        correo:"",
         edad:"",
         cargo:"",
         telefono:"",
@@ -21,7 +21,7 @@ const Formulario = ({ setAlert }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if(colaborador.nombre ==="" ||
-        colaborador.email ==="" ||
+        colaborador.correo ==="" ||
         colaborador.edad ==="" ||
         colaborador.cargo ==="" ||
         colaborador.telefono ===""){
@@ -34,7 +34,17 @@ const Formulario = ({ setAlert }) => {
         setAlert({
             msg: "Colaborador agregado correctamente",
             color: "success",
-        })
+        });
+
+        onSubmit(colaborador);
+
+        setColaborador({
+            nombre: "",
+            correo:"",
+            edad: "",
+            cargo: "",
+            telefono: "",
+        });
     }
 
     return (
@@ -53,7 +63,7 @@ const Formulario = ({ setAlert }) => {
                     type="email" 
                     placeholder="Email del colaborador"
                     onChange={handleChange}
-                    name="email"
+                    name="correo"
                     value={colaborador.email}
                 />
                 <Form.Control 
